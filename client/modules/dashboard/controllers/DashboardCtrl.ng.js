@@ -2,6 +2,25 @@
 angular.module("app.dashboard")
   .controller("DashboardCtrl", ['$scope', '$rootScope', '$meteor', '$state', '$location', '$mdToast', function ($scope, $rootScope, $meteor, $state, $location, $mdToast) {
 
+
+    /**********************************************************************/
+    /*                   CHECK AUTHENTICATION                             */
+    /*      YES => CONTINUE          |              NO => REDIRECT YO '/' */             
+    /**********************************************************************/
+    console.log($rootScope.currentUser);
+
+
+
+
+
+
+
+
+
+
+
+
+
     // LINE CHART
     $scope.line = {};
     $scope.line.labels = ["January", "February", "March", "April", "May", "June", "July"];

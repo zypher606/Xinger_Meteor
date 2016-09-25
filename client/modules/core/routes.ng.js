@@ -72,6 +72,10 @@ angular.module("app.core").config(function ($breadcrumbProvider, $urlRouterProvi
         label: 'Home'
       }
     })
+
+
+    //Root directory view changes to login page
+  /*
     .state('core.home', {
       url: '/',
       templateUrl: 'client/modules/core/views/home.ng.html',
@@ -81,6 +85,29 @@ angular.module("app.core").config(function ($breadcrumbProvider, $urlRouterProvi
       },
       //controller: 'LoginCtrl',
     })
+
+  */
+
+    .state('Welcome', {
+      url: '/',
+      templateUrl: 'client/modules/auth/views/login.ng.html',
+      controller: 'LoginCtrl',
+      ncyBreadcrumb: {
+        label: 'Login'
+      },
+      controllerAs: 'lc'
+    })
+
+
+
+
+
+
+
+
+
+
+
     // DASHBOARD /////// /////// //////// //////////
     .state('core.dashboard', {
       url: '/dashboard',
@@ -111,36 +138,38 @@ angular.module("app.core").config(function ($breadcrumbProvider, $urlRouterProvi
         }
       }
     })
-        .state('core.dashboard.home', {
-          url: '/home',
-          templateUrl: 'client/modules/dashboard/views/example1.ng.html',
-          ncyBreadcrumb: {
-            label: 'Example 1'
-          },
-          data: {
-            'selectedTab': 0,
-          },
-        })
-        .state('core.dashboard.profile', {
-          url: '/profile',
-          templateUrl: 'client/modules/dashboard/views/profile.ng.html',
-          ncyBreadcrumb: {
-            label: 'Profile'
-          },
-          data: {
-            'selectedTab': 1,
-          },
-        })
-        .state('core.dashboard.instances', {
-          url: '/instances',
-          templateUrl: 'client/modules/dashboard/views/instances.ng.html',
-          ncyBreadcrumb: {
-            label: 'Instances'
-          },
-          data: {
-            'selectedTab': 2,
-          },
-        })
+
+
+    .state('core.dashboard.home', {
+      url: '/home',
+      templateUrl: 'client/modules/dashboard/views/example1.ng.html',
+      ncyBreadcrumb: {
+        label: 'Example 1'
+      },
+      data: {
+        'selectedTab': 0,
+      },
+    })
+    .state('core.dashboard.profile', {
+      url: '/profile',
+      templateUrl: 'client/modules/dashboard/views/profile.ng.html',
+      ncyBreadcrumb: {
+        label: 'Profile'
+      },
+      data: {
+        'selectedTab': 1,
+      },
+    })
+    .state('core.dashboard.instances', {
+      url: '/instances',
+      templateUrl: 'client/modules/dashboard/views/instances.ng.html',
+      ncyBreadcrumb: {
+        label: 'Instances'
+      },
+      data: {
+        'selectedTab': 2,
+      },
+    })
 
 
 
@@ -154,6 +183,10 @@ angular.module("app.core").config(function ($breadcrumbProvider, $urlRouterProvi
       },
       controllerAs: 'lc'
     })
+
+
+
+
     .state('core.register',{
       url: '/register',
       templateUrl: 'client/modules/auth/views/register.ng.html',
