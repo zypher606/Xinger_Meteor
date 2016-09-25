@@ -187,7 +187,7 @@ angular.module("app.core").config(function ($breadcrumbProvider, $urlRouterProvi
 
 
 
-    .state('core.register',{
+    .state('register',{
       url: '/register',
       templateUrl: 'client/modules/auth/views/register.ng.html',
       controller: 'RegisterCtrl',
@@ -196,7 +196,7 @@ angular.module("app.core").config(function ($breadcrumbProvider, $urlRouterProvi
       },
       controllerAs: 'rc'
     })
-    .state('core.resetpw', {
+    .state('resetpw', {
       url: '/resetpw',
       templateUrl: 'client/modules/auth/views/reset-password.ng.html',
       controller: 'ResetCtrl',

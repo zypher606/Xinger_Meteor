@@ -11,7 +11,7 @@ angular.module("app.auth").controller("ResetCtrl", ['$meteor', '$state',
     vm.reset = function () {
       $meteor.forgotPassword(vm.credentials).then(
         function () {
-          $state.go('home');
+          $state.go('dashboard/home');
         },
         function (err) {
           vm.error = 'Error sending forgot password email - ' + err;
