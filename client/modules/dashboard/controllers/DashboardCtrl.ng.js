@@ -7,8 +7,10 @@ angular.module("app.dashboard")
     /*                   CHECK AUTHENTICATION                             */
     /*      YES => CONTINUE          |              NO => REDIRECT YO '/' */             
     /**********************************************************************/
-    console.log($rootScope.currentUser);
-
+    if ($rootScope.currentUser == null) {
+      $window.location.href = '../';
+    }
+    
 
 
 

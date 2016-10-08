@@ -3,7 +3,7 @@ angular.module("app.core").run(function ($rootScope, $state, $window ) {
     // We can catch the error thrown when the $requireUser promise is rejected
     // and redirect the user back to the main page
     if (error === 'AUTH_REQUIRED') {
-      $state.go('core.home');
+      $state.go('login');
     }
   });
 
@@ -122,18 +122,18 @@ angular.module("app.core").config(function ($breadcrumbProvider, $urlRouterProvi
       resolve: {
         "currentUser": function($meteor){
           // Temporarry, test (fake) user!
-          var user = {
-            emails: [ {address:"admin@yoursite.com", verified:false} ],
-            profile: {
-              first_name:"Administrator",
-              last_name: "Smith",
-            },
-          };
+          // var user = {
+          //   emails: [ {address:"admin@yoursite.com", verified:false} ],
+          //   profile: {
+          //     first_name:"Administrator",
+          //     last_name: "Smith",
+          //   },
+          // };
 
-          return user;
+          // return user;
           // TO ENABLE THIS FOR LOGGED IN USERS ONLY
           // Resolves the promise successfully if a user is authenticated and rejects otherwise
-          // return $meteor.requireUser() ;
+          return $meteor.requireUser() ;
 
         }
       }
@@ -213,7 +213,10 @@ angular.module("app.core").config(function ($breadcrumbProvider, $urlRouterProvi
       resolve: {
         "logout": function($meteor, $state) {
           return $meteor.logout().then(function(){
-            $state.go('core.home');
+
+            // $state.go('core.home');
+            $state.go('login');
+
           }, function(err){
             console.log('logout error - ', err);
           });
