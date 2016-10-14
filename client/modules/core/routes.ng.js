@@ -9,7 +9,7 @@ angular.module("app.core").run(function ($rootScope, $state, $window ) {
 
   // CUSTOMIZE
   $rootScope.page = {
-        SITENAME : "SITENAME",
+        SITENAME : "XINGER",
         // Sets page title
         setTitle: function(title) {
             this.title = title ;
