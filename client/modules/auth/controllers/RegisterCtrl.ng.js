@@ -3,6 +3,7 @@ angular.module("app.auth").controller("RegisterCtrl", ['$meteor', '$state',
     var vm = this;
 
     vm.credentials = {
+      username: '',
       email: '',
       password: '',
       profile: {

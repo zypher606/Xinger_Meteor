@@ -5,7 +5,9 @@ angular.module("app.core").run(function ($rootScope, $state, $window ) {
     if (error === 'AUTH_REQUIRED') {
       $state.go('login');
     }
+  
   });
+
 
   // CUSTOMIZE
   $rootScope.page = {
@@ -19,15 +21,23 @@ angular.module("app.core").run(function ($rootScope, $state, $window ) {
   // Change Title on stateChangeSuccess
   $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
       // Change title
+
+
       if ($state.current.ncyBreadcrumb) {
         $rootScope.page.setTitle($state.current.ncyBreadcrumb.label );
       } else {
-        $rootScope.page.setTitle(""); // no title if none specified
+        $rootScope.page.setTitle("Xinger"); // no title if none specified
       }
       // For Header to display Blue Breadcrumbs Header or nah
       $rootScope.state_name = $state.current.name;
       // Scroll to top of page on refresh
       $window.scrollTo(0, 0);
+
+
+      //REDIRECT TO THE DASHBOARD IF USER IS ALREADY LOGGED IN
+      if ($state.current.name == 'login' || $state.current.name == 'Welcome') {
+        $state.go('core.dashboard');
+      }
   });
 });
 

@@ -8,11 +8,32 @@
       </md-card-title-text>
     </md-card-title>
     <md-card-content>
+
       <div ng-show="rc.error" class="md-warn">
         <small>{{ rc.error }}</small>
       </div>
 
-      <form layout="column">
+      <form layout="column" class="register-col">
+        
+        <md-input-container>
+
+          <md-icon md-font-set="material-icons" flex > account_box </md-icon>
+          <input type="text" ng-model="rc.credentials.profile.first_name"
+                 placeholder="First name" aria-label="fname"/>
+        </md-input-container>
+
+        <md-input-container>
+          <md-icon md-font-set="material-icons" flex > account_box </md-icon>
+          <input type="text" ng-model="rc.credentials.profile.last_name"
+                 placeholder="Last name" aria-label="lname"/>
+        </md-input-container>
+
+        <md-input-container>
+          <md-icon md-font-set="material-icons" flex > perm_identity </md-icon>
+          <input type="text" ng-model="rc.credentials.username"
+                 placeholder="Username" aria-label="username"/>
+        </md-input-container>
+
         <md-input-container>
           <md-icon md-font-set="material-icons" flex > mail </md-icon>
           <input type="text" ng-model="rc.credentials.email"

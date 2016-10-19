@@ -3,9 +3,17 @@
     <md-list-item class="md-3-line" style="padding:5px; ">
       <img src="images/avatars/businessman.png" class="md-avatar" />
       <div class="md-list-item-text" layout="column">
+<!-- 
+
         <h3 class="md-title"> <a ui-sref="core.dashboard.home"> {{user.name}} </a> </h3>
         <h4>{{user.role}}</h4>
         <p>{{user.location}}</p>
+ -->
+        <h3 class="md-title"> <a ui-sref="core.dashboard"> {{currentUser.profile.first_name + ' ' + currentUser.profile.last_name}} </a> </h3>
+        <p>{{currentUser.username}}</p>
+
+ 
+
       </div>
     </md-list-item>
   </md-list>
